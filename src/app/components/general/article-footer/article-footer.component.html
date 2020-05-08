@@ -1,0 +1,9 @@
+<div class="end-container">
+    <div class="end">
+        Pour le bien de tous, le <span class="parti">Parti</span> veille sur nous.
+    </div>
+    <nav>
+        <div class="previous" *ngIf="articleEntry.previous"><a routerLink="../{{articleEntry.previous.routeEntry.path}}" routerLinkActive="active">< Article précédent</a></div>
+        <div class="next" *ngIf="articleEntry.next"><a routerLink="../{{articleEntry.next.routeEntry.path}}" routerLinkActive="active">Article suivant ></a></div>
+    </nav>
+</div>

@@ -1,0 +1,66 @@
+
+body {
+    background-color: rgb(246, 240, 228);
+}
+
+.parti {
+    color: rgb(255, 0, 0);
+    
+    /*background: linear-gradient(red, rgb(131, 0, 0));
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+}
+.journal {
+    //color: rgb(131, 0, 0);
+    color: rgb(209, 84, 0);
+}
+
+a {
+    color: rgb(131, 0, 0);
+    text-decoration: none;
+
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
+
+article {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-family: "The Antiqua B",Georgia,Droid-serif,serif;
+
+    .end {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .title, h1 {
+        margin-bottom: 0px;
+        font-size: 50px;
+        font-weight: 500;
+    }
+    .sub-title {
+        margin-top: 0px;
+        color: #666;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .section-title, h2 {
+        font-weight: 500;
+    }
+
+    .content {
+        font-size: 20px;
+        font-family: PT_Serif, "Times New Roman", Times, serif;
+    }
+
+    > * {
+        width: 650px;
+        max-width: 100%;
+        display: inline-block;
+        text-align: left;
+    }
+}
