@@ -1,4 +1,3 @@
-import { ArticlesTimelineService } from '../services/articles-timeline.service'
 import { ArticleItem } from './article-item';
 
 export interface IArticleConfig {
@@ -17,7 +16,5 @@ export function Article(config: IArticleConfig) {
         Object.defineProperty(target.prototype, 'articleItem', {
             value: articleItem
         })
-
-        ArticlesTimelineService.addArticle(articleItem);
     }
 }

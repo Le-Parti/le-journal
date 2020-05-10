@@ -4,6 +4,9 @@ import { ContactComponent } from './components/general/contact/contact.component
 import { HomeComponent } from './components/general/home/home.component';
 import { NotFoundComponent } from './components/general/not-found/not-found.component';
 import { ArticlesTimelineService } from './services/articles-timeline.service';
+import { articlesLoader } from './components/articles/articles-loader';
+
+articlesLoader();
 
 const articles = ArticlesTimelineService.articles
   .map(item => item.routeEntry);
