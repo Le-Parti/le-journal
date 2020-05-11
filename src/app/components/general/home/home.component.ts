@@ -14,15 +14,11 @@ export class HomeComponent implements OnInit {
   constructor(protected titleService: Title, protected articlesTimelineService: ArticlesTimelineService, protected router: Router) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Accueil');
+    this.titleService.setTitle('Chronologie');
   }
   
-  public get mostRecentArticles() {
-    return this.articlesTimelineService.articles.slice(this.articlesTimelineService.articles.length - 3).reverse();
-  }
-
-  public get firstArticle() {
-    return this.articlesTimelineService.articles[0];
+  public get articles() {
+    return this.articlesTimelineService.articles;
   }
 
   public gotoArticle(date: string): void

@@ -12,9 +12,9 @@ const articles = ArticlesTimelineService.articles
   .map(item => item.routeEntry);
 
 const generalRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/chronologie', pathMatch: 'full' },
   { path: 'contact', component: ContactComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'chronologie', component: HomeComponent },
   { path: '**', component: NotFoundComponent }, // 404
 ];
 
