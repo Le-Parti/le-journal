@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ArticleComponent } from '../../ArticleComponent';
+import { ArticleComponent } from '../../article-component';
 import { Article } from 'src/app/decorators/article';
 
 @Article({
