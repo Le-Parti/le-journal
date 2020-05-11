@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "create-article": "node scripts/createArticle",
     "build-gh": "ng build --prod --base-href https://le-parti.github.io/le-journal/",
-    "publish": "ngh"
+    "publish": "ngh",
+    "build-publish": "npm run build-gh && npm run publish"
   },
   "private": true,
   "dependencies": {
