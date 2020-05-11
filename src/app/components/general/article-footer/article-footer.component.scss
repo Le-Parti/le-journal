@@ -1,7 +1,10 @@
 
 .previous, .next {
     display: inline-block;
+    font-weight: 600;
 }
+
+$link-margin: 15px;
 
 .previous {
     float: left;
@@ -26,6 +29,14 @@
     padding: 10px 0px;
 }
 
-nav > * {
-    margin: 20px 0px;
+nav {
+    height: calc(1em + #{$link-margin * 2 + 3});
+
+    a {
+        color: rgb(246, 240, 228);
+    }
+
+    > * {
+        margin: $link-margin $link-margin;
+    }
 }
