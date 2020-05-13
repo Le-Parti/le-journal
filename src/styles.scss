@@ -4,6 +4,13 @@ body {
     margin: 0px;
 }
 
+article {
+    .citation {
+        border-left: 3px solid rgb(131, 0, 0);
+        padding-left: 10px;
+    }
+}
+
 .parti {
     color: rgb(255, 0, 0);
     

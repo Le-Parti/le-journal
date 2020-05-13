@@ -1,0 +1,25 @@
+
+@mixin gui-background {
+    $colorDark: darken(rgb(198, 44, 46), 100%);
+    //$colorDark: rgb(0, 0, 0);
+    $colorLight: $colorDark;
+    $stripAlpha: 0.6;
+    $bgAlpha: 0.6;
+
+    /** /background: repeating-linear-gradient(
+        -45deg,/**/
+    /**/background: repeating-radial-gradient(
+        circle,/**/
+        rgba($colorLight, $stripAlpha),
+        rgba($colorLight, $stripAlpha) 20px,
+        rgba($colorDark, $bgAlpha) 20px,
+        rgba($colorDark, $bgAlpha) 30px
+    ),
+    url(/assets/dirty.png);
+    background-attachment: fixed;
+
+    color: rgb(246, 240, 228);
+
+    //background-color: rgb(198, 44, 46);
+    //background-image: url(/assets/noise.png);
+}
