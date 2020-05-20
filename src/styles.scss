@@ -1,6 +1,28 @@
 
 body {
-    background-color: rgb(246, 240, 228);
+    //background-color: rgb(246, 240, 228);
+    background-color: rgb(245, 244, 244);
+    
+    $colorDark: white;
+    //$colorDark: rgb(0, 0, 0);
+    $colorLight: #eee;
+    $stripAlpha: 0.6;
+    $bgAlpha: 0.6;
+
+    $offset: 0px;
+
+    /**/background: repeating-linear-gradient(
+        -45deg,/**/
+    /** /background: repeating-radial-gradient(
+        circle,/**/
+        rgba($colorLight, $stripAlpha) $offset,
+        rgba($colorLight, $stripAlpha) 20px + $offset,
+        rgba($colorDark, $bgAlpha) 20px + $offset,
+        rgba($colorDark, $bgAlpha) 30px + $offset
+    );
+    //background-attachment: fixed;
+
+
     margin: 0px;
 }
 
@@ -8,6 +30,39 @@ article {
     .citation {
         border-left: 3px solid rgb(131, 0, 0);
         padding-left: 10px;
+    }
+
+    .article {
+        min-height: calc(100vh - 260px);
+        
+        /*$colorDark: red;
+        //$colorDark: rgb(0, 0, 0);
+        $colorLight: white;
+        $stripAlpha: 0.6;
+        $bgAlpha: 0.6;
+
+        $offset: 1030px;
+
+        background: linear-gradient(
+            -45deg,
+            rgba($colorLight, $stripAlpha) $offset,
+            rgba($colorLight, $stripAlpha) 20px + $offset,
+            rgba($colorDark, $bgAlpha) 20px + $offset,
+            rgba($colorDark, $bgAlpha) 30px + $offset
+        );*/
+        //background-attachment: fixed;
+
+        position: relative;
+
+        &:before {
+            content: '';
+            pointer-events: none;
+            position: absolute;
+            top: 0; left: 0;
+            border-bottom: 100px solid transparent;
+            border-left: 180px solid rgba(black, 0.3);
+            width: 0;
+        }
     }
 }
 
@@ -18,10 +73,13 @@ article {
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;*/
+
+    font-weight: bold;
 }
 .journal {
     //color: rgb(131, 0, 0);
-    color: rgb(209, 84, 0);
+    //font-family: 'Patua One', cursive;
+    font-weight: bold;
 }
 
 a {
@@ -44,11 +102,23 @@ article {
         font-size: 25px;
     }
 
-    .title, h1 {
-        margin-bottom: 0px;
-        font-size: 50px;
-        font-weight: 500;
+    .article {
+        background-color: white;
+        padding: 0px 30px;
+        //box-shadow: -10px 00px 8px rgba(#888888, 0.5), 10px 00px 8px rgba(#888888, 0.5);
+        
+        .title, h1 {
+            margin-bottom: 0px;
+            font-size: 50px;
+            font-weight: 500;
+        }
     }
+
+    app-home {
+        position: absolute;
+        width: 600px;
+    }
+
     .sub-title {
         margin-top: 0px;
         color: #666;

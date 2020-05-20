@@ -1,18 +1,22 @@
 
-<div style="text-align: center">
-    <div style="display: inline-block; text-align: left; width: 650px; max-width: 100%;">
-        <div class="item-section">
-            <h1>Chronologie des articles</h1>
-            <div class="item-list">
-                <div class="item" *ngFor="let article of articles">
-                    <div class="line-wrapper" (click)="gotoArticle(article)">
-                        <div class="date">{{ article.date }}</div>
-                        <div class="point"></div>
-                        <div class="title" [innerHtml]="article.titleHtml"></div>
+<article>
+    <div class="article">
+        <div style="text-align: center">
+            <div style="display: inline-block; text-align: left; width: 650px; max-width: 100%;">
+                <div class="item-section">
+                    <h1>Chronologie des articles</h1>
+                    <div class="item-list">
+                        <div class="item" *ngFor="let article of articles">
+                            <div class="line-wrapper" (click)="gotoArticle(article)">
+                                <div class="date">{{ article.date }}</div>
+                                <div class="point"></div>
+                                <div class="title" [innerHtml]="article.titleHtml"></div>
+                            </div>
+                            <div class="link"></div>
+                        </div>
                     </div>
-                    <div class="link"></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</article>

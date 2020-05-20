@@ -1,45 +1,92 @@
 @import "../styles/mixins.scss";
 
 .header-title {
+    background-color: white;
     text-align: center;
-    font-family: stencil;
-    font-size: 50px;
+    font-size: 70px;
 
-    @include gui-background;
+    //@include gui-background;
+    border-bottom: 4px solid rgb(255, 0, 0);
+    font-family: 'Patua One', cursive;
+
+    $ts-x: -3px;
+    $ts-y: 3px;
+
+    color: black;
+    text-shadow: $ts-x $ts-y 5px white, $ts-x $ts-y;
 
     padding: 30px 0px;
 }
 .page-footer {
+    background-color: white;
     text-align: center;
     font-size: 10px;
-    padding: 20px;
+    padding: 20px 0px;
     
-    @include gui-background;
+    /*border-top: 3px solid black;
+    background-color: black;
+    color: white;*/
+    box-shadow: 0px -3px 8px rgba(#888888, 0.15);
+    position: absolute;
+    width: 100%;
+    
+    //@include gui-background;
 }
 
+.header-nav, .header-nav-shadow {
+    height: 58px;
+}
 .header-nav {
+    /*$colorDark: white;
+    //$colorDark: rgb(0, 0, 0);
+    $colorLight: #eee;
+    $stripAlpha: 0.6;
+    $bgAlpha: 0.6;
+
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba($colorLight, $stripAlpha),
+        rgba($colorLight, $stripAlpha) 20px,
+        rgba($colorDark, $bgAlpha) 20px,
+        rgba($colorDark, $bgAlpha) 30px
+    );
+    //background-attachment: fixed;
+
+    background-color: white;*/
+
+
     text-align: center;
+    box-shadow: 0px 3px 8px rgba(#888888, 0.3);
+    
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    font-family: 'Patua One', cursive;
 
     ul {
+        
         list-style-type: none;
         display: inline-block;
-        padding: 15px 30px 15px 0px;
-        width: 650px;
-        max-width: 100%;
+        padding: 15px 0px;
+        /*width: 650px;
+        max-width: 100%;*/
         margin: 0px;
 
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
 
         font-size: 25px;
-        @include gui-background;
+        //@include gui-background;
 
         li {
             display: inline-block;
-            margin-left: 30px;
+
+            &:not(:first-of-type) {
+                margin-left: 30px;
+            }
 
             a {
-                color: rgb(246, 240, 228);
+                color: black;
             }
         }
     }

@@ -4,6 +4,16 @@
     margin-bottom: 30px;
 }
 
+article {
+    h1 {
+        font-size: 30px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+}
+
 .item-list {
     .item {
         .line-wrapper > * {
@@ -28,11 +38,13 @@
 
             &:hover {
                 cursor: pointer;
+                background: repeating-linear-gradient(-45deg, rgba(238, 238, 238, 0.6), rgba(238, 238, 238, 0.6) 20px, rgba(255, 255, 255, 0.6) 20px, rgba(255, 255, 255, 0.6) 30px);
                 background-color: rgba(#c62c2e, 0.1);
                 border-radius: 20px;
 
                 .point {
-                    @include gui-background;
+                    background: repeating-linear-gradient(-45deg, rgba(238, 238, 238, 0.6), rgba(238, 238, 238, 0.6) 20px, rgba(255, 255, 255, 0.6) 20px, rgba(255, 255, 255, 0.6) 30px);
+                    background-color: red;
                 }
             }
         }
