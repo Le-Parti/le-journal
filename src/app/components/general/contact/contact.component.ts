@@ -11,7 +11,7 @@ export class ContactComponent implements OnInit {
   constructor(protected titleService: Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Contacter le journal');
+    this.titleService.setTitle('Le Journal :: Contacter le journal');
   }
 
 }

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { ArticlesTimelineService } from 'src/app/services/articles-timeline.service';
-import { ArticleItem } from 'src/app/decorators/article-item';
+import { ArticlesService, ArticlesServiceItem } from 'src/app/services/articles.service';
 
 @Component({
   selector: 'app-home',
@@ -11,21 +10,17 @@ import { ArticleItem } from 'src/app/decorators/article-item';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(protected titleService: Title, protected articlesTimelineService: ArticlesTimelineService, protected router: Router) { }
+  constructor(protected titleService: Title, protected articlesService: ArticlesService, protected router: Router) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Chronologie');
+    this.titleService.setTitle('Le Journal :: Chronologie');
   }
   
   public get articles() {
-    return this.articlesTimelineService.articles;
+    return this.articlesService.orderedAricles;
   }
 
-  public gotoArticle(date: string): void
-  public gotoArticle(articleItem: ArticleItem): void
-  public gotoArticle(articleItemOrDate: ArticleItem | string): void
-  public gotoArticle(articleItemOrDate: ArticleItem | string) {
-    const articleItem = typeof articleItemOrDate === 'string' ? this.articlesTimelineService.findByDate(articleItemOrDate) : articleItemOrDate;
-    this.router.navigate([ articleItem.routeEntry.path ]);
+  public gotoArticle(article: ArticlesServiceItem): void {
+    this.router.navigate([ article.routeEntry.path ]);
   }
 }

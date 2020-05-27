@@ -11,7 +11,7 @@ export class NotFoundComponent implements OnInit {
   constructor(protected titleService: Title) { }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Page introuvable');
+    this.titleService.setTitle('Le Journal :: Page introuvable');
   }
 
 }

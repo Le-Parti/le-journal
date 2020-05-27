@@ -1,0 +1,79 @@
+
+.comment {
+
+    $border: 2px dotted black;
+
+    border-left: $border;
+
+    .author {
+        border-bottom: $border;
+    }
+
+    div {
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .reply {
+        margin-left: 15px;
+    }
+
+    .content {
+        ::ng-deep p {
+            margin-top: 0px !important;
+        }
+    }
+
+    .delete-msg {
+        color: red;
+    }
+}
+
+
+@import "../../../styles/mixins.scss";
+
+.previous, .next {
+    display: inline-block;
+    font-weight: 600;
+}
+
+$link-margin: 15px;
+
+.previous {
+    float: left;
+}
+.next {
+    float: right;
+}
+
+.end-container {
+    /*border-top-left-radius: 15px;
+    border-top-right-radius: 15px;*/
+
+    //border-top: 1px solid black;
+    //box-shadow: inset 0px 7px 8px -5px rgba(black, 0.2);
+    //padding-top: 15px;
+
+    //margin-top: 41.5px;
+
+    text-align: center;
+}
+
+.end {
+    padding: 10px 0px;
+}
+
+nav {
+    height: calc(1em + #{$link-margin * 2 + 3});
+
+    a {
+        //color: rgb(246, 240, 228);
+        color: black;
+    }
+
+    > * {
+        margin: $link-margin $link-margin;
+    }
+}
+
