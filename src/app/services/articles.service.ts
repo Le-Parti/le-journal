@@ -116,8 +116,34 @@ export class ArticlesServiceItem {
       .toLocaleLowerCase();
   }
 
+  public getDescription(nbChars: number) {
+    const content = this.content
+      .trim()
+      .replace(/^ +/img, '')
+      .replace(/\n\n/img, ':::RET:::')
+      .replace(/\n/img, ' ')
+      .replace(/:::RET:::/img, '\n')
+
+    if(content.length < nbChars) {
+      return content;
+    } else {
+      const trunc = content.substr(0, nbChars - 3);
+      const spaceIndex = trunc.lastIndexOf(' ');
+
+      return trunc.substr(0, spaceIndex).trim() + '...';
+    }
+  }
+
   public get titlePage() {
     return this.info.title;
+  }
+
+  public get canonicalPath() {
+    return this.routeEntry.path || '/';
+  }
+  public get canonicalUrl() {
+    const base = window.location.toString().split(/\/+/img);
+    return `${base[0]}//${base[1]}${this.canonicalPath}`;
   }
 
   public get titleHtml() {

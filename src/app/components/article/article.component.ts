@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ArticlesService } from 'src/app/services/articles.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
+import { Title, Meta } from '@angular/platform-browser';
 import { KEY_CODE } from 'src/app/consts/keycodes';
+import { MetaTagsService } from 'src/app/services/meta-tags.service';
 
 @Component({
   selector: 'app-article',
@@ -10,7 +11,7 @@ import { KEY_CODE } from 'src/app/consts/keycodes';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
-  constructor(protected articlesService: ArticlesService, protected route: ActivatedRoute, protected router: Router, protected titleService: Title) { }
+  constructor(protected articlesService: ArticlesService, protected route: ActivatedRoute, protected router: Router, protected titleService: Title, protected metaTagsService: MetaTagsService) { }
 
   private _articleId: number;
   public get articleId() {
@@ -21,6 +22,8 @@ export class ArticleComponent implements OnInit {
 
     if(typeof value === 'number' && this.article) {
       this.titleService.setTitle('Le Journal :: ' + this.article.titlePage);
+
+      this.metaTagsService.setArticleMetas(this.article);
     }
   }
 
