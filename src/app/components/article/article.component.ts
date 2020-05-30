@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { ArticlesService } from 'src/app/services/articles.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { KEY_CODE } from 'src/app/consts/keycodes';
 
 @Component({
   selector: 'app-article',
@@ -9,7 +10,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
-  constructor(protected articlesService: ArticlesService, protected route: ActivatedRoute, protected titleService: Title) { }
+  constructor(protected articlesService: ArticlesService, protected route: ActivatedRoute, protected router: Router, protected titleService: Title) { }
 
   private _articleId: number;
   public get articleId() {
@@ -27,7 +28,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.subId = this.route.paramMap.subscribe((params) => {
-      this.articleId = parseInt(/(\d+)/.exec(params.get('id'))[1]);
+      this.articleId = parseFloat(/(\d+(?:\.\d+)?)/.exec(params.get('id'))[1]);
     })
   }
   
@@ -40,7 +41,6 @@ export class ArticleComponent implements OnInit {
   }
 
   public get next() {
-    console.log(this.index);
     return this.articlesService.getArticleById(this.articlesService.orderes[this.index + 1]);
   }
   public get previous() {
@@ -49,5 +49,26 @@ export class ArticleComponent implements OnInit {
 
   public get article() {
     return this.articlesService.getArticleById(this.articleId);
+  }
+
+  public get capSafeArticle() {
+    return this.articlesService.getArticleById(7);
+  }
+
+  public clickOnLink(event: MouseEvent) {
+    const element = event.target as HTMLElement;
+  }
+  
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    switch(event.keyCode) {
+      case KEY_CODE.RIGHT_ARROW:
+        this.router.navigate([ this.next.routeEntry.path ]);
+        break;
+        
+      case KEY_CODE.LEFT_ARROW:
+        this.router.navigate([ this.previous.routeEntry.path ]);
+        break;
+    }
   }
 }

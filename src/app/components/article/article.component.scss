@@ -4,6 +4,7 @@
     $border: 2px dotted black;
 
     border-left: $border;
+    margin-bottom: 10px;
 
     .author {
         border-bottom: $border;
@@ -22,12 +23,25 @@
     .content {
         ::ng-deep p {
             margin-top: 0px !important;
+
+            &:last-child {
+                margin-bottom: 0px !important;
+            }
         }
     }
 
     .delete-msg {
         color: red;
     }
+}
+
+.content {
+    text-align: justify;
+}
+
+.date {
+    margin-top: 5px;
+    display: inline-block;
 }
 
 

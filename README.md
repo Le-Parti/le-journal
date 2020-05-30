@@ -1,11 +1,11 @@
 # Le Journal
 
-Site web : https://le-parti.github.io/le-journal/
+Accès : https://le-parti.github.io/le-journal/
 
 # Description du projet
 
-Le Journal est un média journalistique sur internet qui a pour but de promouvoir la propagande du Parti, "élu" le 7 mai 2020.
-
-Le Parti est un parti politique autoritaire fictif d'un pays imaginaire qui va utiliser tout un tas de techniques pour maintenir l'ordre et faire du contrôle de la pensée.
+Le Journal, fondé le 7 mai 2020, est une œuvre fictive qui tente de décrire une société qui tournerait à l'ultra-capitalisme sans limite et au totalitarisme.
 
 Ce projet n'a nul autre dessein que de raconter une histoire dystopique divertissante.
+
+Pour toute question ou remarque, vous pouvez me contacter à l'adresse suivante : adrien.castex@protonmail.com

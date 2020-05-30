@@ -1,21 +1,25 @@
 <article>
     <div class="article">
         <h1 class="title" [innerHTML]="article.titleHtml"></h1>
-        <h5 class="sub-title"><span class="date">7 mai 2020</span></h5>
+        <h5 class="sub-title"><span class="date">{{ article.date }}</span></h5>
 
-        <div class="content" [innerHTML]="article.contentHtml"></div>
+        <div class="content" [innerHTML]="article.contentHtml" (click)="clickOnLink($event)"></div>
 
         <div class="comments">
             <h2>Commentaires</h2>
 
+            <div *ngIf="article.comments.length === 0">
+                Aucun commentaire.
+            </div>
+
             <div [ngClass]="['comment', comment.banned ? 'banned' : '']" *ngFor="let comment of article.comments">
                 <div class="author">{{ comment.author }}</div>
-                <div class="delete-msg" *ngIf="comment.banned">Message en attente de suppression pour avoir enfreint la loi CapSafe.</div>
+                <div class="delete-msg" *ngIf="comment.banned">Message en attente de suppression pour avoir enfreint la loi <a [routerLink]="capSafeArticle.routeEntry.path">CapSafe</a>.</div>
                 <div class="content" [innerHTML]="comment.contentHtml"></div>
                 
                 <div [ngClass]="['reply', comment.banned ? 'banned' : '']" *ngFor="let comment of comment.replies">
                     <div class="author">{{ comment.author }}</div>
-                    <div class="delete-msg" *ngIf="comment.banned">Message en attente de suppression pour avoir enfreint la loi CapSafe.</div>
+                    <div class="delete-msg" *ngIf="comment.banned">Message en attente de suppression pour avoir enfreint la loi <a [routerLink]="capSafeArticle.routeEntry.path">CapSafe</a>.</div>
                     <div class="content" [innerHTML]="comment.contentHtml"></div>
                 </div>
             </div>
@@ -23,10 +27,9 @@
 
         <div class="end-container">
             <nav>
-                <div class="previous" *ngIf="previous"><a routerLink="{{previous.routeEntry.path}}" routerLinkActive="active">< Article précédent</a></div>
-                <div class="next" *ngIf="next"><a routerLink="{{next.routeEntry.path}}" routerLinkActive="active">Article suivant ></a></div>
+                <div class="previous" *ngIf="previous"><a [routerLink]="previous.routeEntry.path">< Article précédent</a></div>
+                <div class="next" *ngIf="next"><a [routerLink]="next.routeEntry.path">Article suivant ></a></div>
             </nav>
         </div>
     </div>
-    <!--<app-home></app-home>-->
 </article>
