@@ -17,6 +17,7 @@ export class MetaTagsService {
     this.clear();
 
     this.metaService.addTags([
+      { name: 'google-site-verification', content: '-TJJnNbj3QM1ZUiiTAQeZVnnRuSX269NSxZ4M359BNg' },
       { name: 'description', content: desc },
       { itemprop: 'description', content: desc },
       { itemprop: 'name', content: title },
